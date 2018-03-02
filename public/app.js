@@ -2,7 +2,6 @@ let selectedRegion;
 
 const app = function () {
     //get data
-    // const dataProvider = new RequestDataProvider();
     const listButton = document.getElementById('button-list-page');
 
 
