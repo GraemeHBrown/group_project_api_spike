@@ -10,10 +10,10 @@ MongoClient.connect(url, function (err, client) {
     }
 
     const db = client.db('education_app_spike');
-
+    /*other routes could be created for different stages e.g. /objectList/early */
     //SHOW
     objectsRouter.get('/objectList', function (req, res) {
-        const collection = db.collection('computing_objects');
+        const collection = db.collection('fixed_list_objects');
         collection.find({}).toArray(function (err, docs) {
             if (err) {
                 console.log(err);
@@ -34,7 +34,7 @@ MongoClient.connect(url, function (err, client) {
 
     //CREATE
     objectsRouter.post('/objectList', function (req, res) {
-        const objectCollection = db.collection('computing_objects');
+        const objectCollection = db.collection('fixed_list_objects');
         const objectToSave = req.body.computing_object;
 
         objectCollection.save(objectToSave, function (err, result) {
@@ -51,7 +51,7 @@ MongoClient.connect(url, function (err, client) {
 
     //DELETE ALL
     objectsRouter.delete('/objectList', function (req, res) {
-        const objectCollection = db.collection('computing_objects');
+        const objectCollection = db.collection('fixed_list_objects');
         const filterObject = {};
         objectCollection.deleteMany(filterObject, function (err, result) {
             if (err) {

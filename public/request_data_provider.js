@@ -1,3 +1,5 @@
+//this could be renamed as APIDataProvider??
+
 const RequestDataProvider = class RequestDataProvider {
     constructor(url) {
         this.url = url;
