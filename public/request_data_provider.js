@@ -13,7 +13,7 @@ RequestDataProvider.prototype.getData = function (url) {
     request.addEventListener('load', function () {
         if (request.status !== 200) return;
         var jsonString = request.responseText;
-        var returnedObjects= JSON.parse(jsonString);
+        var returnedObjects = JSON.parse(jsonString);
         this.objects = returnedObjects;
         this.onUpdate(returnedObjects);
     }.bind(this));

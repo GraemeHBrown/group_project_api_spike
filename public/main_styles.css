@@ -2,3 +2,11 @@ h1, h2{
 
     font-family: 'Raleway', sans-serif;
 }
+
+.delete-success {
+    width: 100%;
+    padding: 15px;
+    background-color: red;
+    color: white;
+    font-size: 17px;
+}
